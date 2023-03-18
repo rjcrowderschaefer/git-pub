@@ -13,8 +13,14 @@
             background-color: steelblue;
             color: blanchedalmond;
         }
-
-
     </style>
+    
+    <ul>
+    <% for(let i = 0; i < capDrinks.length; i++) { %>
+            <li>Name: <%= capDrinks[i] %></li>
+        <hr>
+    <% } %>
+    </ul>
+
 </body>
 </html>

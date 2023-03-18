@@ -5,12 +5,18 @@ const port = 4001;
 const models = require('./models/Drinks.js');
 const drinks = models.drinks
 
+app.set('view engine', 'ejs');
+
 app.get('/', (req, res) => {
     res.send ('Welcome to the Gitpub App!');
 });
 
 app.get('/drinks', (req, res) => {
-    res.render('drinks_index.ejs');
+    let capDrinks = [];
+    drinks.forEach(drink => {
+        capDrinks.push(drink.name.charAt(0).toUpperCase() + drink.name.slice(1))
+    })
+    res.render('drinks_index.ejs', {capDrinks});
 });
 
 app.listen(port, () => {
