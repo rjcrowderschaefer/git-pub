@@ -17,7 +17,7 @@
     
     <ul>
     <% for(let i = 0; i < capDrinks.length; i++) { %>
-            <li>Name: <%= capDrinks[i] %></li>
+        <li><a href="/drinks/<%= i %>"><%= capDrinks[i] %></a></li>
         <hr>
     <% } %>
     </ul>
